@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { IconButton } from "@material-ui/core";
 import { Tasks } from "../TodoTask";
+import { Container } from "./style";
 
 const Todo = () => {
   return (
     <>
-      <div>
+      <Container>
         <Tasks />
-      </div>
+      </Container>
     </>
   );
 };
