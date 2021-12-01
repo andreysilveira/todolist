@@ -8,9 +8,12 @@ export const Tasks = () => {
   const [todos, setTodos] = useState<string[]>([]);
   const [todosDone, setTodosDone] = useState<string[]>([]);
 
+  function handleRemoveTask() {
+    setTodosDone(todos);
+  }
 
-  function handleRemoveTask(){
-
+  function handleClearTasks() {
+    setTodosDone([]);
   }
 
   console.log(todos);
@@ -20,7 +23,11 @@ export const Tasks = () => {
         <div className="TitleHeader">
           <h1>To Do</h1>
         </div>
-        <div className="ImgHeader is-flex is-justify-content-center is-align-content-center is-align-items-center">
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={handleClearTasks}
+          className="ImgHeader is-flex is-justify-content-center is-align-content-center is-align-items-center"
+        >
           <img src="https://img.icons8.com/bubbles/50/000000/trash.png" />
         </div>
       </div>
@@ -33,14 +40,15 @@ export const Tasks = () => {
           }}
         >
           <label className="label">
-            <h2>Teste</h2>
+            <h2>Dale task ae, vamo que vamo!</h2>
             <input
-              className="input is-small"
+              className="input is-normal"
               placeholder=""
               type="text"
               value={value}
               onChange={(event) => setValue(event.target.value)}
             />
+
           </label>
           {/* <button type="submit">adicionar</button> */}
         </form>
@@ -51,12 +59,7 @@ export const Tasks = () => {
               key={index}
             >
               {todo}{" "}
-              <span
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  alert("A");
-                }}
-              >
+              <span style={{ cursor: "pointer" }} onClick={handleRemoveTask}>
                 <IconContext.Provider value={{ color: "red" }}>
                   <FiTrash2 />
                 </IconContext.Provider>
@@ -65,7 +68,17 @@ export const Tasks = () => {
           ))}
         </div>
         <div className="Line"></div>
-        <div></div>
+        <div>
+          {todosDone.map((todos, index) => (
+            <div
+              className="divItemDone box is-flex is-justify-content-space-between is-align-content-center is-align-items-center"
+              key={index}
+            >
+              {todos}
+              {""}
+            </div>
+          ))}
+        </div>
       </div>
     </Container>
   );

@@ -11,9 +11,11 @@ export const Container = styled.div`
   /* background-color: #2B2D37; */
   background-color: #ffffff;
 
+
+  
   @media screen and (max-width: 768px) {
-    /* width: 505px;
-        height: 488px; */
+    width: auto;
+    margin: 0.1rem 0rem 0rem 0rem;
   }
 
   div {
@@ -36,6 +38,7 @@ export const Container = styled.div`
     &.Line {
       border: 1px solid #ebebeb;
       margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     form {
@@ -58,6 +61,12 @@ export const Container = styled.div`
     }
 
     &.divItem{
+      background-color: #6665a4;
+      color: #FFF;
+      margin-bottom: 0.5rem;
+    }
+
+    &.divItemDone{
       background-color: #6665a4;
       color: #FFF;
       margin-bottom: 0.5rem;

@@ -2,6 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
+    html, body {
+    width: 100%;
+    height: 100%;
+    }
+
     :root{
         --background: #f0f2f5;
         --red: #E52e54;
@@ -55,4 +60,4 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 0.6;
         cursor: not-allowed;
     }
-`
+`;

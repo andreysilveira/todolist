@@ -6,7 +6,7 @@ export const Footer = () => {
     <>
       <Container className="content has-text-centered">
         <p>
-          <strong>Task List</strong> by{" "}
+          <strong>Task List</strong> <span>by</span>{" "}
           <a href="https://github.com/andreysilveira">Andrey Silveira</a>.
         </p>
       </Container>
